@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStruct.Learning", "DataStruct.Learning\DataStruct.Learning.csproj", "{744BC90A-6A1F-4C81-8DF6-7698612F4469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStruct.UnitTest", "DataStruct.UnitTest\DataStruct.UnitTest.csproj", "{72407656-F4CF-47E1-AEB9-01F126E26FDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{744BC90A-6A1F-4C81-8DF6-7698612F4469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744BC90A-6A1F-4C81-8DF6-7698612F4469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744BC90A-6A1F-4C81-8DF6-7698612F4469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744BC90A-6A1F-4C81-8DF6-7698612F4469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72407656-F4CF-47E1-AEB9-01F126E26FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72407656-F4CF-47E1-AEB9-01F126E26FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72407656-F4CF-47E1-AEB9-01F126E26FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72407656-F4CF-47E1-AEB9-01F126E26FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
