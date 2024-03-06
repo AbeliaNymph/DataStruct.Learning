@@ -4,7 +4,7 @@ using DataStruct.Learning;
 namespace DataStruct.UnitTest;
 
 [TestClass]
-public class LinkedListTest
+public class MyLinkedListTest
 {
 
     [TestMethod]
