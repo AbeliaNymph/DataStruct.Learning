@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace DataStruct.Learning;
 
 public class MyLinkedNode<T>(T value)
@@ -19,7 +20,7 @@ public class MyLinkedNode<T>(T value)
         last.Next = new(value);
     }
 
-    private MyLinkedNode<T> GetLastNode(MyLinkedNode<T> myLinkedNode)
+    private static MyLinkedNode<T> GetLastNode(MyLinkedNode<T> myLinkedNode)
     {
         if (myLinkedNode.HasNext())
         {
@@ -32,5 +33,10 @@ public class MyLinkedNode<T>(T value)
     private bool HasNext()
     {
         return Next != null;
+    }
+
+    public void InsertBefore(int index, T value)
+    {
+        throw new InvalidOperationException();
     }
 }

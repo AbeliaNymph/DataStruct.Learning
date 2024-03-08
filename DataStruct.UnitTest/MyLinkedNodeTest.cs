@@ -40,4 +40,24 @@ public class MyLinkedNodeTest
 
         Assert.AreEqual(expected, obtained.ToString());
     }
+
+    [TestMethod]
+    public void OneElement_InsertBefore_ThrowInvalidOperationException()
+    {
+        MyLinkedNode<int> obtained = new(1);
+        Assert.ThrowsException<InvalidOperationException>(() => obtained.InsertBefore(0, 2));
+    }
+
+    [TestMethod]
+    public void OneAndTwoElement_InsertBefore_OneValueAndTwo()
+    {
+        MyLinkedNode<int> obtained = new(1);
+        obtained.Append(2);
+
+        obtained.InsertBefore(1, 3);
+
+        string expected = "Node(1) -> Node(3) -> Node(2) -> None";
+
+        Assert.AreEqual(expected, obtained.ToString());
+    }
 }
