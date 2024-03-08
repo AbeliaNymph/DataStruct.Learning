@@ -9,6 +9,19 @@ public class MyLinkedNode<T>(T value)
 
     public MyLinkedNode<T>? Next { get; set; }
 
+    public int Count {
+        get {
+            int acc = 1;
+
+            for (MyLinkedNode<T> i = this; i.Next != null; i = i.Next)
+            {
+                acc += 1;
+            }
+
+            return acc;
+        }
+    }
+
     public override string ToString()
     {
         return $"Node({Value}) -> {(Next == null ? "None" : Next)}";
@@ -37,6 +50,38 @@ public class MyLinkedNode<T>(T value)
 
     public void InsertBefore(int index, T value)
     {
-        throw new InvalidOperationException();
+        if (index == 0)
+        {
+            throw new InvalidOperationException();
+        }
+
+        if (index < 0 || index >= Count)
+        {
+            throw new IndexOutOfRangeException();
+        }
+
+        MyLinkedNode<T> after = GetNode(index);
+        MyLinkedNode<T> before = GetNode(index - 1);
+
+        MyLinkedNode<T> node = new(value);
+        before.Next = node;
+        node.Next = after;
+    }
+
+    private MyLinkedNode<T> GetNode(int index)
+    {
+        static MyLinkedNode<T> RecGetNode(MyLinkedNode<T> node, int index)
+        {
+            if (index == 0)
+            {
+                return node;
+            }
+            else
+            {
+                return RecGetNode(node.Next!, index - 1);
+            }
+        }
+
+        return RecGetNode(this, index);
     }
 }

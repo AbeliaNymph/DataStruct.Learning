@@ -60,4 +60,18 @@ public class MyLinkedNodeTest
 
         Assert.AreEqual(expected, obtained.ToString());
     }
+
+    [TestMethod]
+    public void RangeOneToThree_InsertBefore_OneTwoFourThree()
+    {
+        MyLinkedNode<int> obtained = new(1);
+        obtained.Append(2);
+        obtained.Append(3);
+
+        obtained.InsertBefore(2, 4);
+
+        string expected = "Node(1) -> Node(2) -> Node(4) -> Node(3) -> None";
+
+        Assert.AreEqual(expected, obtained.ToString());
+    }
 }
