@@ -84,4 +84,18 @@ public class MyLinkedNode<T>(T value)
 
         return RecGetNode(this, index);
     }
+
+    public void Delete(int index)
+    {
+        if (Count == 1)
+        {
+            throw new InvalidOperationException();
+        }
+        
+        MyLinkedNode<T> before = GetNode(index - 1);
+        MyLinkedNode<T>? after = index == Count - 1 ? null : GetNode(index + 1);
+
+        before.Next = after;
+        
+    }
 }

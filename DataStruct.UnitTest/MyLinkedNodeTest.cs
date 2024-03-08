@@ -74,4 +74,42 @@ public class MyLinkedNodeTest
 
         Assert.AreEqual(expected, obtained.ToString());
     }
+
+    [TestMethod]
+    public void OneElemant_Detele_ThrowInvalidOperationException()
+    {
+        MyLinkedNode<int> obtained = new(1);
+
+        Assert.ThrowsException<InvalidOperationException>(() => obtained.Delete(0));
+    }
+
+    [TestMethod]
+    public void TwoElement_Delete_OneElement()
+    {
+        MyLinkedNode<int> obtained = new(1);
+
+        obtained.Append(2);
+
+        obtained.Delete(1);
+
+        string expected = "Node(1) -> None";
+
+        Assert.AreEqual(expected, obtained.ToString());
+    }
+
+    [TestMethod]
+    public void ThreeElement_Delete_TwoElement()
+    {
+        MyLinkedNode<int> obtained = new(1);
+
+        obtained.Append(2);
+        obtained.Append(3);
+
+        obtained.Delete(1);
+
+        string expected = "Node(1) -> Node(3) -> None";
+
+        Assert.AreEqual(expected, obtained.ToString());
+        
+    }
 }
