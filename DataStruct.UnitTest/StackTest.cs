@@ -36,12 +36,27 @@ public class StackTest
 
         string expected = "1 ]";
 
-        Assert.AreEqual(expected, obtained.ToString()); 
+        Assert.AreEqual(expected, obtained.ToString());
     }
 
     [TestMethod]
     public void EmptyElement_Pop_ThrowInvalidOperationException()
     {
-        
+        MyStack<int> obtained = new();
+
+        Assert.ThrowsException<InvalidOperationException>(() => obtained.Pop());
     }
+
+    [TestMethod]
+    public void OneElement_Pop_ReturnThisElement()
+    {
+        MyStack<int> obtained = new();
+
+        obtained.Push(1);
+
+        Assert.AreEqual(1, obtained.Pop());
+        Assert.AreEqual("]", obtained.ToString());
+    }
+
+    
 }

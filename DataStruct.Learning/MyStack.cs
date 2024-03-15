@@ -6,7 +6,11 @@ public class MyStack<T>
 {
     private readonly List<T> _instance = [];
 
-    private int? _topIndex = -1;
+    private int _topIndex = -1;
+
+    public bool IsEmpty { 
+        get => _topIndex == -1; 
+    }
 
     public MyStack(T value)
     {   _topIndex += 1;
@@ -36,5 +40,24 @@ public class MyStack<T>
     {
         _topIndex += 1;
         _instance.Add(value);
+    }
+
+    public T Pop()
+    {
+        if (IsEmpty)
+        {
+            throw new InvalidOperationException();
+        }
+        else
+        {
+            T top = _instance[_topIndex];
+
+            _instance.Remove(top);
+
+            _topIndex -= 1;
+
+            return top;
+        }
+        
     }
 }
